@@ -16,12 +16,16 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="title",nullable = false,unique = true)
     private String title;
 
+    @Column(name="description",nullable = false,unique = true)
     private String description;
 
+    @Column(nullable = false)
     private LocalDateTime dueDate;
 
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
     @PrePersist
